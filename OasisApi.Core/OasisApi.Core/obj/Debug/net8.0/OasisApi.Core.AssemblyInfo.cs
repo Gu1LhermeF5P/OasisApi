@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OasisApi.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5a44d83bbce1a2ba7b5ba641e5961ae1af7653d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+796f0c2a3c79b3aa999894f9bc95ec582bfe46d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("OasisApi.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OasisApi.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

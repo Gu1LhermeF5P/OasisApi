@@ -1,13 +1,18 @@
 using Microsoft.EntityFrameworkCore;
-using OasisApi.Core.Data;     // (Vamos criar esta pasta)
-using OasisApi.Core.Services; // (Vamos criar esta pasta)
+using OasisApi.Core.Data;     
+using OasisApi.Core.Services;
+using Oracle.ManagedDataAccess.Client; 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // --- 1. Configuração do Oracle (EF Core) ---
 var oracleConnection = builder.Configuration.GetConnectionString("OracleDbConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseOracle(oracleConnection, opt => opt.UseOracleSQLCompatibility("11"))
+    options.UseOracle(oracleConnection, opt =>
+    {
+
+        opt.UseOracleSQLCompatibility(OracleSQLCompatibility.DatabaseVersion19);
+    })
 );
 
 // --- 2. Configuração do MongoDB (Requisito 5 do BD) ---
