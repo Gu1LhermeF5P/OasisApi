@@ -1,0 +1,16 @@
+# Arquivo .gitignore padrão para projetos .NET
+
+# Ignora pastas de cache do IDE (o seu problema)
+.vs/
+.idea/
+*.suo
+*.user
+
+# Ignora arquivos de usuário específicos (Rider)
+*.user.user
+*.user.project
+*.Rider2025.1
+
+# Ignora pastas de compilação (lixo)
+[Bb]in/
+[Oo]bj/
