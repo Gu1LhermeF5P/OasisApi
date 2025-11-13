@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("OasisApi.Core")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("OasisApi.Core.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ab832cadd0c958dc0ce0e0d56becce5920bbfa2")]
-[assembly: System.Reflection.AssemblyProductAttribute("OasisApi.Core")]
-[assembly: System.Reflection.AssemblyTitleAttribute("OasisApi.Core")]
+[assembly: System.Reflection.AssemblyProductAttribute("OasisApi.Core.Tests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("OasisApi.Core.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

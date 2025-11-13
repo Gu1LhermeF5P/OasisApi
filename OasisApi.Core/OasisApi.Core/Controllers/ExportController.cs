@@ -28,8 +28,6 @@ namespace OasisApi.Core.Controllers
         {
             string jsonResult = ""; // Variável para armazenar o JSON
 
-            // --- INÍCIO DA CORREÇÃO (MÉTODO MANUAL) ---
-            // Vamos usar uma conexão Oracle manual para ter controle total sobre o CLOB
 
             // 1. Cria a conexão usando a string do appsettings
             using (var connection = new OracleConnection(_oracleConnectionString))
@@ -56,7 +54,7 @@ namespace OasisApi.Core.Controllers
                         await command.ExecuteNonQueryAsync();
 
                         // 7. LÊ O CLOB (enquanto a conexão ainda está ABERTA)
-                        // Esta é a correção para o ORA-50045
+                        
                         var clobResult = (OracleClob)jsonDatasetParam.Value;
                         jsonResult = clobResult.Value;
                     }
@@ -67,8 +65,7 @@ namespace OasisApi.Core.Controllers
                     // 8. A conexão é fechada automaticamente aqui pelo 'using'
                 }
             }
-            // --- FIM DA CORREÇÃO ---
-
+            
             // 9. O código abaixo (MongoDB) é executado APÓS a conexão Oracle fechar
             try
             {

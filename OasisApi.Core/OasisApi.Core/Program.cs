@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using OasisApi.Core.Data;     
+using OasisApi.Core.Data;
 using OasisApi.Core.Services;
-using Oracle.ManagedDataAccess.Client; 
+using Oracle.ManagedDataAccess.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,26 +10,24 @@ var oracleConnection = builder.Configuration.GetConnectionString("OracleDbConnec
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseOracle(oracleConnection, opt =>
     {
-
         opt.UseOracleSQLCompatibility(OracleSQLCompatibility.DatabaseVersion19);
     })
 );
 
-// --- 2. Configuração do MongoDB (Requisito 5 do BD) ---
+// --- 2. Configuração do MongoDB ---
 builder.Services.AddSingleton<MongoDbService>();
 
-// --- 3. Configuração do Health Check (Requisito .NET) ---
+// --- 3. Configuração do Health Check ---
 builder.Services.AddHealthChecks()
     .AddOracle(oracleConnection, name: "OracleDB-Check");
 
-// --- Serviços Padrão da API ---
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Pipeline de execução
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -38,5 +36,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
-app.MapHealthChecks("/health"); // Endpoint do Health Check
+app.MapHealthChecks("/health");
 app.Run();
+
+public partial class Program { }
