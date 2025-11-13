@@ -10,7 +10,7 @@ using System.Data;
 namespace OasisApi.Core.Controllers
 {
     [ApiController]
-    [Route("api/v1/usuarios")] // Versionamento (Requisito .NET)
+    [Route("api/v1/usuarios")]
     public class UsuariosController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -20,7 +20,7 @@ namespace OasisApi.Core.Controllers
             _context = context;
         }
 
-        // --- REQUISITO .NET: GET com Paginação e HATEOAS ---
+        // --- GET (READ ALL) com Paginação e HATEOAS ---
         [HttpGet(Name = "GetUsuarios")]
         public async Task<IActionResult> GetUsuarios([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
@@ -48,7 +48,7 @@ namespace OasisApi.Core.Controllers
             return Ok(pagedResult);
         }
 
-        // --- Endpoint de apoio para HATEOAS ---
+        // --- GET (READ ONE) ---
         [HttpGet("{id}", Name = "GetUsuarioPorId")]
         public async Task<IActionResult> GetUsuarioPorId(int id)
         {
@@ -60,7 +60,7 @@ namespace OasisApi.Core.Controllers
             return Ok(usuarioDto);
         }
 
-        // --- REQUISITO BD: Chamada de Procedure (INSERT) ---
+        // --- POST (CREATE) ---
         [HttpPost(Name = "CriarUsuario")]
         public async Task<IActionResult> CriarUsuario([FromBody] CriarUsuarioDto dto)
         {
@@ -74,15 +74,65 @@ namespace OasisApi.Core.Controllers
                     new OracleParameter("p_cargo", OracleDbType.Varchar2, dto.Cargo, ParameterDirection.Input),
                     new OracleParameter("p_fuso", OracleDbType.Varchar2, dto.FusoHorario, ParameterDirection.Input)
                 };
-
                 string sql = "BEGIN PKG_GERENCIAMENTO.SP_INSERT_USUARIO(:p_empresa_id, :p_nome, :p_email, :p_cargo, :p_fuso); END;";
-
                 await _context.Database.ExecuteSqlRawAsync(sql, parameters);
 
+                // Retorna 201 (Created) e o link para o novo recurso (Boa Prática REST)
+                // (Para isso funcionar, precisamos descobrir o ID... vamos simplificar por enquanto)
                 return StatusCode(201, "Usuário criado com sucesso via procedure.");
             }
             catch (Exception ex)
             {
+                return StatusCode(500, $"Erro ao executar procedure: {ex.Message}");
+            }
+        }
+
+        // --- PUT (UPDATE) ---
+        [HttpPut("{id}", Name = "AtualizarUsuario")]
+        public async Task<IActionResult> AtualizarUsuario(int id, [FromBody] UpdateUsuarioDto dto)
+        {
+            try
+            {
+                var parameters = new[]
+                {
+                    new OracleParameter("p_usuario_id", OracleDbType.Int32, id, ParameterDirection.Input),
+                    new OracleParameter("p_nome", OracleDbType.Varchar2, dto.NomeCompleto, ParameterDirection.Input),
+                    new OracleParameter("p_cargo", OracleDbType.Varchar2, dto.Cargo, ParameterDirection.Input),
+                    new OracleParameter("p_fuso", OracleDbType.Varchar2, dto.FusoHorario, ParameterDirection.Input)
+                };
+                string sql = "BEGIN PKG_GERENCIAMENTO.SP_UPDATE_USUARIO(:p_usuario_id, :p_nome, :p_cargo, :p_fuso); END;";
+
+                await _context.Database.ExecuteSqlRawAsync(sql, parameters);
+
+                // Retorna 200 (OK) ou 204 (No Content)
+                return Ok("Usuário atualizado com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro ao executar procedure: {ex.Message}");
+            }
+        }
+
+        // --- DELETE (DELETE) ---
+        [HttpDelete("{id}", Name = "DeletarUsuario")]
+        public async Task<IActionResult> DeletarUsuario(int id)
+        {
+            try
+            {
+                var parameters = new[]
+                {
+                    new OracleParameter("p_usuario_id", OracleDbType.Int32, id, ParameterDirection.Input)
+                };
+                string sql = "BEGIN PKG_GERENCIAMENTO.SP_DELETE_USUARIO(:p_usuario_id); END;";
+
+                await _context.Database.ExecuteSqlRawAsync(sql, parameters);
+
+                // Retorna 204 (No Content) - O padrão para DELETE bem-sucedido
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                // Este erro é comum se o usuário tiver FKs (ex: metadados)
                 return StatusCode(500, $"Erro ao executar procedure: {ex.Message}");
             }
         }

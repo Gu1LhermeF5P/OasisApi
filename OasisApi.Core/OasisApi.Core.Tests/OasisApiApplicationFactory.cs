@@ -2,15 +2,14 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration; 
 using OasisApi.Core.Data;
 using OasisApi.Core.Models;
 using OasisApi.Core.Services;
-using Moq; 
+using Moq;
 
 namespace OasisApi.Core.Tests
 {
-  
     public class OasisApiApplicationFactory : WebApplicationFactory<Program>
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -39,8 +38,26 @@ namespace OasisApi.Core.Tests
                     services.Remove(mongoServiceDescriptor);
                 }
 
+                
                 // 4. Adiciona um "Mock" (simulação) do MongoDbService
-                services.AddSingleton(new Mock<MongoDbService>(Mock.Of<IConfiguration>()).Object);
+
+                var fakeConfiguration = new ConfigurationBuilder()
+                    .AddInMemoryCollection(new Dictionary<string, string>
+                    {
+                       
+                        ["ConnectionStrings:MongoDbConnection"] = "mongodb://fake-test-server",
+                        ["MongoDbSettings:DatabaseName"] = "fake-db",
+                        ["MongoDbSettings:CollectionName"] = "fake-collection"
+                    })
+                    .Build();
+
+             
+                var mockMongoDbService = new Mock<MongoDbService>(fakeConfiguration) { CallBase = true };
+
+                // Adicionamos o objeto mockado ao contêiner de serviços.
+                services.AddSingleton(mockMongoDbService.Object);
+                
+
 
                 // 5. Semeia (Seed) o banco em memória
                 var sp = services.BuildServiceProvider();
