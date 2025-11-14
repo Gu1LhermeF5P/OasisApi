@@ -22,6 +22,11 @@ namespace OasisApi.Core.Models
         [Column("cargo")]
         public string Cargo { get; set; }
 
+       
+        [Column("fuso_horario")]
+        public string FusoHorario { get; set; }
+        
+
         [ForeignKey("EmpresaId")]
         public virtual Empresa Empresa { get; set; }
     }
