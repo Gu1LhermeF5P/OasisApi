@@ -154,8 +154,13 @@ Aqui estão os principais endpoints demonstrados neste projeto:
 
 ---
 
-## 🧑‍💻 Autores
+---
 
-* **Nome:** [Seu Nome Completo]
-* **RM:** [Seu RM]
-* **Turma:** [Sua Turma]
+## 👥 Integrantes do Grupo
+
+| Nome | RM |
+|------|-----|
+| Larissa de Freitas Moura | 555136 |
+| Guilherme Francisco | 557648 |
+
+---
