@@ -27,7 +27,7 @@ Este projeto foi desenvolvido em **.NET 8.0 (LTS)** e cumpre todos os requisitos
     * **Verbos HTTP:** Implementação completa de `GET`, `POST`, `PUT` e `DELETE`.
 
 * **✅ 2. Monitoramento e Observabilidade (15 pts)**
-    * **Health Check:** Endpoint `/health` implementado, que verifica a conectividade com o banco de dados Oracle.
+    * **Health Check:** Endpoints `/health` (simples) e `/health/details` (JSON detalhado) implementados para verificar a conectividade com o Oracle.
     * **Logging:** O logging padrão do .NET está configurado para capturar informações e erros.
 
 * **✅ 3. Versionamento da API (10 pts)**
@@ -41,7 +41,7 @@ Este projeto foi desenvolvido em **.NET 8.0 (LTS)** e cumpre todos os requisitos
 
 * **✅ 5. Testes Integrados (15 pts)**
     * Um projeto separado (`OasisApi.Core.Tests`) usa **xUnit** para rodar testes de integração.
-    * Os testes usam `WebApplicationFactory` para iniciar a API em memória, substituindo o Oracle por um `InMemoryDatabase` e "mockando" (simulando) o `MongoDbService` para garantir testes rápidos e isolados.
+    * Os testes usam `WebApplicationFactory` para iniciar a API em memória, substituindo o Oracle por um `InMemoryDatabase` e "mockando" (simulando) o `MongoDbService`.
 
 ---
 
@@ -66,8 +66,7 @@ Siga estes passos para executar o projeto localmente:
     git clone https://[SEU-REPOSITORIO-URL]/OasisApi.Core.git
     cd OasisApi.Core
     ```
-2.  Renomeie o arquivo `appsettings.Development.json.example` (se existir) para `appsettings.Development.json`, ou edite diretamente o `appsettings.json`.
-3.  Abra `appsettings.json` e **insira suas strings de conexão**:
+2.  Edite o `appsettings.json` e **insira suas strings de conexão**:
 
     ```json
     {
@@ -96,7 +95,7 @@ Siga estes passos para executar o projeto localmente:
     ```
 4.  A API estará disponível. Os endereços principais são:
     * **Swagger (Documentação):** `https://localhost:[PORTA]/swagger`
-    * **Health Check:** `https://localhost:[PORTA]/health`
+    * **Health Check Detalhado:** `https://localhost:[PORTA]/health/details`
 
 ---
 
@@ -119,24 +118,27 @@ Aqui estão os principais endpoints demonstrados neste projeto:
 ### Health Check
 
 * `GET /health`
-    * **Função:** Verifica a saúde da API e a conexão com o Oracle.
+    * **Função:** Verifica se a API está "viva" (liveness probe).
     * **Resposta (Sucesso):** `Healthy`
+* `GET /health/details`
+    * **Função:** Verifica a saúde da API e de **todos** os seus serviços dependentes (readiness probe), como o Oracle.
+    * **Resposta (Sucesso):** Um JSON detalhado com o status `Healthy` para o `OracleDB-Check`.
 
-### Usuários (CRUD)
+### Usuários (CRUD) - v1 e v2
 
-* `POST /api/v1/usuarios`
+* `POST /api/v1/usuarios` (ou `/v2`)
     * **Função:** Cria um novo usuário. Chama a procedure `SP_INSERT_USUARIO`.
     * **Resposta (Sucesso):** `201 Created`
 
-* `GET /api/v1/usuarios`
+* `GET /api/v1/usuarios` (ou `/v2`)
     * **Função:** Lista usuários com paginação e HATEOAS.
     * **Resposta (Sucesso):** `200 OK` (com o objeto `PagedResult`)
 
-* `PUT /api/v1/usuarios/{id}`
+* `PUT /api/v1/usuarios/{id}` (ou `/v2`)
     * **Função:** Atualiza um usuário. Chama a procedure `SP_UPDATE_USUARIO`.
     * **Resposta (Sucesso):** `200 OK`
 
-* `DELETE /api/v1/usuarios/{id}`
+* `DELETE /api/v1/usuarios/{id}` (ou `/v2`)
     * **Função:** Deleta um usuário. Chama a procedure `SP_DELETE_USUARIO`.
     * **Resposta (Sucesso):** `204 No Content`
 
@@ -154,6 +156,51 @@ Aqui estão os principais endpoints demonstrados neste projeto:
 
 ---
 
+## 🧪 Exemplo de Teste Rápido (Usando Swagger)
+
+Este roteiro demonstra o ciclo CRUD completo e a integração.
+
+**1. (CREATE) Criar um usuário:**
+* **Endpoint:** `POST /api/v1/usuarios`
+* **Request Body:**
+    ```json
+    {
+      "empresaId": 1,
+      "nomeCompleto": "Debora Lemos (Teste API)",
+      "email": "debora.lemos@oasis.tech",
+      "cargo": "Engenheira de QA",
+      "fusoHorario": "America/Sao_Paulo"
+    }
+    ```
+* **Resultado:** `201 Created`.
+
+**2. (READ) Ler os usuários:**
+* **Endpoint:** `GET /api/v1/usuarios`
+* **Ação:** Execute o `GET` e encontre o `usuarioId` da "Debora Lemos" que você acabou de criar (vamos supor que seja `13`).
+
+**3. (UPDATE) Atualizar o usuário:**
+* **Endpoint:** `PUT /api/v1/usuarios/{id}`
+* **Parameters:** `id: 13`
+* **Request Body:**
+    ```json
+    {
+      "nomeCompleto": "Debora Lemos (Cargo Atualizado)",
+      "cargo": "Gerente de QA",
+      "fusoHorario": "America/Recife"
+    }
+    ```
+* **Resultado:** `200 OK`.
+
+**4. (DELETE) Deletar o usuário:**
+* **Endpoint:** `DELETE /api/v1/usuarios/{id}`
+* **Parameters:** `id: 13`
+* **Resultado:** `204 No Content`. (Se você rodar o `GET` de novo, a "Debora" terá sumido).
+
+**5. (EXPORT) Testar a integração Oracle -> MongoDB:**
+* **Endpoint:** `POST /api/v1/export/mongodb/{empresaId}`
+* **Parameters:** `empresaId: 1`
+* **Resultado:** `200 OK`. (Se você checar no MongoDB Atlas, os dados do Oracle (incluindo os 5 usuários da "Oasis Tech") terão sido importados).
+
 ---
 
 ## 👥 Integrantes do Grupo
@@ -162,5 +209,3 @@ Aqui estão os principais endpoints demonstrados neste projeto:
 |------|-----|
 | Larissa de Freitas Moura | 555136 |
 | Guilherme Francisco | 557648 |
-
----
