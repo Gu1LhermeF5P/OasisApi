@@ -367,6 +367,36 @@
           "lib/net6.0/HealthChecks.Oracle.dll": {}
         }
       },
+      "AspNetCore.HealthChecks.UI.Client/8.0.1": {
+        "dependencies": {
+          "AspNetCore.HealthChecks.UI.Core": "8.0.1",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/HealthChecks.UI.Client.dll": {
+            "assemblyVersion": "8.0.1.0",
+            "fileVersion": "8.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/net8.0/HealthChecks.UI.Client.dll": {}
+        }
+      },
+      "AspNetCore.HealthChecks.UI.Core/8.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "8.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/HealthChecks.UI.Core.dll": {
+            "assemblyVersion": "8.0.1.0",
+            "fileVersion": "8.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/net6.0/HealthChecks.UI.Core.dll": {}
+        }
+      },
       "AWSSDK.Core/3.7.100.14": {
         "runtime": {
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {
@@ -2099,6 +2129,7 @@
       "OasisApi.Core/1.0.0": {
         "dependencies": {
           "AspNetCore.HealthChecks.Oracle": "8.0.1",
+          "AspNetCore.HealthChecks.UI.Client": "8.0.1",
           "Microsoft.AspNetCore.Mvc.Testing": "8.0.6",
           "Microsoft.EntityFrameworkCore.InMemory": "8.0.6",
           "MongoDB.Driver": "2.27.0",
@@ -3935,6 +3966,20 @@
       "sha512": "sha512-SP/HUga1IGeSRdl6Oj8tw0E+S3qQ+LR56Ja7//+NNJUzOEF/rggEc73dwTelRDkx+q0+b/Xlu3OgvpstwNwsvw==",
       "path": "aspnetcore.healthchecks.oracle/8.0.1",
       "hashPath": "aspnetcore.healthchecks.oracle.8.0.1.nupkg.sha512"
+    },
+    "AspNetCore.HealthChecks.UI.Client/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nhC6KIoB/EtTbH3uGm2J6EHEUyTJuETUARFePbmrnA+zjbwsirzIVUQl46qIjvyPABhK0e7Rk+AxcRqC6zikqA==",
+      "path": "aspnetcore.healthchecks.ui.client/8.0.1",
+      "hashPath": "aspnetcore.healthchecks.ui.client.8.0.1.nupkg.sha512"
+    },
+    "AspNetCore.HealthChecks.UI.Core/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Vn00MOJ1I0HSqyP7Bt9v0pr0AIgbrXMjL/KFwW+sRwLRogOtep8BWGimd8XYRCbCDLrAi7VSArU02f6pEIw69w==",
+      "path": "aspnetcore.healthchecks.ui.core/8.0.1",
+      "hashPath": "aspnetcore.healthchecks.ui.core.8.0.1.nupkg.sha512"
     },
     "AWSSDK.Core/3.7.100.14": {
       "type": "package",

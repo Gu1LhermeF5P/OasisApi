@@ -460,3 +460,5 @@ D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core.Tests\
 D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core.Tests\obj\Debug\net8.0\OasisApi.Core.Tests.pdb
 D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core.Tests\obj\Debug\net8.0\OasisApi.Core.Tests.genruntimeconfig.cache
 D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core.Tests\obj\Debug\net8.0\ref\OasisApi.Core.Tests.dll
+D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core.Tests\bin\Debug\net8.0\HealthChecks.UI.Client.dll
+D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core.Tests\bin\Debug\net8.0\HealthChecks.UI.Core.dll

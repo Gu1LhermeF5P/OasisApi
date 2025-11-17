@@ -1,2 +1,7 @@
 D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core\obj\Debug\net8.0\staticwebassets.build.json
 D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core\obj\Debug\net8.0\staticwebassets.build.json
+D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core\obj\Debug\net8.0\staticwebassets.build.json
+D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core\obj\Debug\net8.0\staticwebassets.build.json
+D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core\obj\Debug\net8.0\staticwebassets.build.json
+D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core\obj\Debug\net8.0\staticwebassets.build.json
+D:\OneDrive\Área de Trabalho\gs_net\OasisApi\OasisApi.Core\OasisApi.Core\obj\Debug\net8.0\staticwebassets.build.json
