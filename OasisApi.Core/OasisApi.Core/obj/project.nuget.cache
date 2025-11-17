@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "oxAleLGkwA0=",
+  "dgSpecHash": "2YkNnBMD57s=",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Área de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\OasisApi.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GUILHERME\\.nuget\\packages\\aspnetcore.healthchecks.oracle\\8.0.1\\aspnetcore.healthchecks.oracle.8.0.1.nupkg.sha512",
+    "C:\\Users\\GUILHERME\\.nuget\\packages\\aspnetcore.healthchecks.ui.client\\8.0.1\\aspnetcore.healthchecks.ui.client.8.0.1.nupkg.sha512",
+    "C:\\Users\\GUILHERME\\.nuget\\packages\\aspnetcore.healthchecks.ui.core\\8.0.1\\aspnetcore.healthchecks.ui.core.8.0.1.nupkg.sha512",
     "C:\\Users\\GUILHERME\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\GUILHERME\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\GUILHERME\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
