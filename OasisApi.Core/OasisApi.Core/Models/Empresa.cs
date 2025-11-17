@@ -13,6 +13,11 @@ namespace OasisApi.Core.Models
         [Column("nome_empresa")]
         public string NomeEmpresa { get; set; }
 
+      
+        [Column("cnpj")]
+        public string Cnpj { get; set; }
+      
+
         public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

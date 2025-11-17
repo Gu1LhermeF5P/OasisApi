@@ -10,7 +10,7 @@ using Moq;
 
 namespace OasisApi.Core.Tests
 {
-    // A classe da 'Factory' deve ser 'public' para ser acessível pelo xUnit
+    
     public class OasisApiApplicationFactory : WebApplicationFactory<Program>
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -28,6 +28,7 @@ namespace OasisApi.Core.Tests
                 // 2. Adiciona um Banco em Memória
                 services.AddDbContext<AppDbContext>(options =>
                 {
+                    // Garante que o mesmo banco "InMemoryDbForTesting" seja usado por todos os testes
                     options.UseInMemoryDatabase("InMemoryDbForTesting");
                 });
 
@@ -39,7 +40,7 @@ namespace OasisApi.Core.Tests
                     services.Remove(mongoServiceDescriptor);
                 }
 
-                // 4. Cria uma configuração falsa (mas não nula) para o Mock do MongoDB
+                // 4. Cria uma configuração falsa (mas não nula) para o Mock
                 var fakeConfiguration = new ConfigurationBuilder()
                     .AddInMemoryCollection(new Dictionary<string, string>
                     {
@@ -74,7 +75,7 @@ namespace OasisApi.Core.Tests
         // Método para popular o banco em memória com dados falsos
         private void SeedDatabase(AppDbContext db)
         {
-            var empresa = new Empresa { EmpresaId = 1, NomeEmpresa = "Empresa Teste" };
+            var empresa = new Empresa { EmpresaId = 1, NomeEmpresa = "Empresa Teste", Cnpj = "123456789" };
             db.Empresas.Add(empresa);
 
             // Adiciona os dados de teste, incluindo o campo 'FusoHorario'

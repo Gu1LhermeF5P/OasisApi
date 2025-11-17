@@ -7,20 +7,8 @@
       "RelativeMoniker": "D:0:0:{9BD3D2F4-E747-469C-848B-2051F5F813E1}|OasisApi.Core.Tests\\OasisApi.Core.Tests.csproj|solutionrelative:oasisapi.core.tests\\oasisapiapplicationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\controllers\\v2\\usuariosv2controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\controllers\\v2\\usuariosv2controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\dtos\\v2\\usuariodtov2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\dtos\\v2\\usuariodtov2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,38 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\dtos\\updateusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\dtos\\updateusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\controllers\\exportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\controllers\\exportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\dtos\\linkdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\dtos\\linkdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\dtos\\criarusuariodtoilename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\dtos\\criarusuariodtoilename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\helpers\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\helpers\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\models\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\models\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|d:\\onedrive\\\u00E1rea de trabalho\\gs_net\\oasisapi\\oasisapi.core\\oasisapi.core\\services\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0352B5A-1B95-43BA-AA3D-D39F9CD821E9}|OasisApi.Core\\OasisApi.Core.csproj|solutionrelative:oasisapi.core\\services\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,32 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Program.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Program.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Program.cs",
-              "RelativeToolTip": "OasisApi.Core\\Program.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAmwFAAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T15:38:51.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsuarioDtoV2.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Dtos\\V2\\UsuarioDtoV2.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Dtos\\V2\\UsuarioDtoV2.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Dtos\\V2\\UsuarioDtoV2.cs",
-              "RelativeToolTip": "OasisApi.Core\\Dtos\\V2\\UsuarioDtoV2.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAgwBsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T15:31:53.829Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "OasisApi.Core\\Controllers\\UsuariosController.cs",
@@ -123,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "UpdateUsuarioDto.cs",
               "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Dtos\\UpdateUsuarioDto.cs",
               "RelativeDocumentMoniker": "OasisApi.Core\\Dtos\\UpdateUsuarioDto.cs",
@@ -141,130 +72,23 @@
               "RelativeDocumentMoniker": "OasisApi.Core.Tests\\OasisApiApplicationFactory.cs",
               "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core.Tests\\OasisApiApplicationFactory.cs",
               "RelativeToolTip": "OasisApi.Core.Tests\\OasisApiApplicationFactory.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAADwv2EAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-13T13:36:51.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UsuariosV2Controller.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Controllers\\V2\\UsuariosV2Controller.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Controllers\\V2\\UsuariosV2Controller.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Controllers\\V2\\UsuariosV2Controller.cs",
-              "RelativeToolTip": "OasisApi.Core\\Controllers\\V2\\UsuariosV2Controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T15:32:50.97Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Models\\Usuario.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Models\\Usuario.cs",
-              "RelativeToolTip": "OasisApi.Core\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T13:29:53.127Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ExportController.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Controllers\\ExportController.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Controllers\\ExportController.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Controllers\\ExportController.cs",
-              "RelativeToolTip": "OasisApi.Core\\Controllers\\ExportController.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAcwFgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T13:30:13.406Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "OasisApi.Core\\Data\\AppDbContext.cs",
               "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Data\\AppDbContext.cs",
               "RelativeToolTip": "OasisApi.Core\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T13:30:10.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UsuarioDto.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Dtos\\UsuarioDto.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Dtos\\UsuarioDto.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Dtos\\UsuarioDto.cs",
-              "RelativeToolTip": "OasisApi.Core\\Dtos\\UsuarioDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T13:30:06.937Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LinkDto.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Dtos\\LinkDto.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Dtos\\LinkDto.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Dtos\\LinkDto.cs",
-              "RelativeToolTip": "OasisApi.Core\\Dtos\\LinkDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T13:30:05.221Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CriarUsuarioDtoileName.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Dtos\\CriarUsuarioDtoileName.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Dtos\\CriarUsuarioDtoileName.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Dtos\\CriarUsuarioDtoileName.cs",
-              "RelativeToolTip": "OasisApi.Core\\Dtos\\CriarUsuarioDtoileName.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T13:30:01.042Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PagedResult.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Helpers\\PagedResult.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Helpers\\PagedResult.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Helpers\\PagedResult.cs",
-              "RelativeToolTip": "OasisApi.Core\\Helpers\\PagedResult.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T13:29:57.473Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Empresa.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Models\\Empresa.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Models\\Empresa.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Models\\Empresa.cs",
-              "RelativeToolTip": "OasisApi.Core\\Models\\Empresa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T13:29:47.745Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MongoDbService.cs",
-              "DocumentMoniker": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Services\\MongoDbService.cs",
-              "RelativeDocumentMoniker": "OasisApi.Core\\Services\\MongoDbService.cs",
-              "ToolTip": "D:\\OneDrive\\\u00C1rea de Trabalho\\gs_net\\OasisApi\\OasisApi.Core\\OasisApi.Core\\Services\\MongoDbService.cs",
-              "RelativeToolTip": "OasisApi.Core\\Services\\MongoDbService.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T13:29:42.568Z"
+              "WhenOpened": "2025-11-13T13:30:10.46Z",
+              "EditorCaption": ""
             }
           ]
         }
