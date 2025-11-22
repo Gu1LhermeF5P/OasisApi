@@ -39,7 +39,7 @@ Este projeto foi desenvolvido em **.NET 8.0 (LTS)** e cumpre todos os requisitos
 ## 🚀 Deploy e Teste ao Vivo (Azure)
 
 **Link do Deploy (Swagger UI):**
-[https://oasis-api-gs-bagkd6f7e7c6b4hv.westus-01.azurewebsites.net/](https://oasis-api-gs-bagkd6f7e7c6b4hv.westus-01.azurewebsites.net/)
+[https://oasis-api-gs-bagkd6f7e7c6b4hv.westus-01.azurewebsites.net/](https://oasis-api-gs-bagkd6f7e7c6b4hv.westus-01.azurewebsites.net/index.html)
 
 A URL acima carrega a interface do Swagger UI diretamente (esta é a página inicial), que foi habilitada em produção para fins de demonstração.
 
