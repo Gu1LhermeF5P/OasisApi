@@ -1,4 +1,4 @@
-# Projeto OASIS - API Core (.NET)
+# 📖 Projeto OASIS - API Core (.NET)
 
 ## 💡 Conceito: App "Equilíbrio Híbrido"
 
@@ -10,38 +10,29 @@ Esta API .NET serve como a "ponte" robusta entre o banco de dados relacional (Or
 
 ### Arquitetura da Solução
 
-Esta API (`OasisApi.Core`) não é consumida diretamente pelo frontend. Ela é a camada de dados que será chamada pela nossa API "cérebro" (Java/Spring).
-
-
+Esta API (`OasisApi.Core`) não é consumida diretamente pelo frontend. Ela é a camada de dados que será chamada pela nossa API "cérebro" (Java/Spring). 
 
 ---
 
-## 🚀 Tecnologias e Requisitos (.NET)
+## 🚀 Tecnologias e Requisitos (`ADVANCED BUSINESS DEVELOPMENT WITH .NET`)
 
-Este projeto foi desenvolvido em **.NET 8.0 (LTS)** e cumpre todos os requisitos da matéria `ADVANCED BUSINESS DEVELOPMENT WITH .NET`:
+Este projeto foi desenvolvido em **.NET 8.0 (LTS)** e cumpre todos os requisitos da matéria, incluindo a implementação da funcionalidade de IA e o CRUD de sentenças de humor/sentimento (conforme implementado na Sprint 4):
 
 * **✅ 1. Boas Práticas REST (30 pts)**
-    * **Paginação:** Implementada no endpoint `GET /api/v1/usuarios` com a classe `PagedResult<T>`.
-    * **HATEOAS:** Implementado no `GET /api/v1/usuarios`, com links `self`, `next` e `prev` para navegação, e links `self` em cada recurso.
-    * **Status Codes:** Uso correto de `200 OK`, `201 Created`, `204 No Content`, `404 Not Found` e `500 Internal Server Error`.
-    * **Verbos HTTP:** Implementação completa de `GET`, `POST`, `PUT` e `DELETE`.
-
+    * **Paginação, HATEOAS, Status Codes e Verbos HTTP:** Implementação completa no recurso principal (`/api/v1/usuarios`).
 * **✅ 2. Monitoramento e Observabilidade (15 pts)**
-    * **Health Check:** Endpoints `/health` (simples) e `/health/details` (JSON detalhado) implementados para verificar a conectividade com o Oracle.
-    * **Logging:** O logging padrão do .NET está configurado para capturar informações e erros.
-
+    * **Health Check:** Endpoints `/health` (simples) e `/health/details` (JSON detalhado) para **Oracle** e **MongoDB**.
 * **✅ 3. Versionamento da API (10 pts)**
-    * A API está estruturada com versionamento em rota.
-    * **v1:** `/api/v1/usuarios` (retorna DTO padrão).
-    * **v2:** `/api/v2/usuarios` (retorna DTO V2, que inclui o `fusoHorario`, provando a evolução da API sem quebrar a v1).
-
+    * Versões **v1** e **v2** estruturadas em rota (ex: `/api/v1/usuarios` e `/api/v2/usuarios`).
 * **✅ 4. Integração e Persistência (30 pts)**
-    * **Integração Relacional (Oracle):** A API utiliza uma arquitetura **Database-First** com Entity Framework Core. Todas as transações (INSERT, UPDATE, DELETE) são feitas de forma segura, chamando **procedures PL/SQL** (`PKG_GERENCIAMENTO`).
-    * **Integração Não-Relacional (MongoDB):** A API possui um endpoint (`/api/v1/export/mongodb/{id}`) que chama uma procedure Oracle (`SP_EXPORTAR_DATASET_EMPRESA`) para gerar um JSON manual e, em seguida, importa esses dados para uma coleção no **MongoDB Atlas**.
-
-* **✅ 5. Testes Integrados (15 pts)**
-    * Um projeto separado (`OasisApi.Core.Tests`) usa **xUnit** para rodar testes de integração.
-    * Os testes usam `WebApplicationFactory` para iniciar a API em memória, substituindo o Oracle por um `InMemoryDatabase` e "mockando" (simulando) o `MongoDbService`.
+    * **Relacional (Oracle):** Arquitetura **Database-First** com Entity Framework Core e uso de **procedures PL/SQL** (`PKG_GERENCIAMENTO`).
+    * **Não-Relacional (MongoDB):** Endpoint de exportação Oracle -> MongoDB Atlas (via `SP_EXPORTAR_DATASET_EMPRESA`).
+* **✅ 5. Funcionalidade de IA (Sprint 4)**
+    * **ML.NET:** Implementação do endpoint `/v1/ml/classificar-humor` para demonstrar o uso de Machine Learning na API.
+* **✅ 6. Segurança (Sprint 4)**
+    * **JWT:** Configuração de esquema de segurança `Bearer` no Swagger e exigência de autorização em endpoints críticos.
+* **✅ 7. Testes Integrados (15 pts)**
+    * Projeto `OasisApi.Core.Tests` com **xUnit** e `WebApplicationFactory` (substituindo Oracle por `InMemoryDatabase`).
 
 ---
 
@@ -54,16 +45,12 @@ A URL acima carrega a interface do Swagger UI diretamente (esta é a página ini
 
 ### ‼️ Instruções Importantes para Teste na Nuvem
 
-Ao testar a API no link de deploy acima, observe o seguinte comportamento:
-
 * **Endpoints do Oracle (ex: `GET /api/v1/usuarios`, `GET /health/details`)**
     * **Status:** 🔴 **FALHARÁ** (Erro 500 - Timeout)
-    * **Motivo (Esperado):** O firewall da FIAP bloqueia conexões externas de servidores na nuvem (como o Azure) ao banco de dados `oracle.fiap.com.br`.
-    * **Prova de Funcionamento:** A prova completa de que a integração com o Oracle funciona está no **vídeo de demonstração** (gravado localmente), onde a conexão é permitida.
-
-* **Endpoints do MongoDB (ex: `POST /api/v1/export/mongodb/...`)**
-    * **Status:** 🟢 **FUNCIONARÁ**
-    * **Motivo:** O firewall do MongoDB Atlas foi configurado para `0.0.0.0/0` (Allow Access from Anywhere), permitindo a conexão do servidor do Azure.
+    * **Motivo (Esperado):** O firewall da FIAP bloqueia conexões externas de servidores na nuvem (Azure) ao banco de dados `oracle.fiap.com.br`.
+    * **Prova de Funcionamento:** A prova completa de que a integração com o Oracle funciona está no **vídeo de demonstração** (gravado localmente).
+* **Endpoints do MongoDB / ML.NET**
+    * **Status:** 🟢 **FUNCIONARÁ** (O MongoDB Atlas permite a conexão externa).
 
 ---
 
@@ -83,41 +70,41 @@ Siga estes passos para executar o projeto localmente:
 
 ### 3. Configuração (O Passo Mais Importante)
 
-1.  Clone este repositório:
-    ```bash
-    git clone https://[SEU-REPOSITORIO-URL]/OasisApi.Core.git
-    cd OasisApi.Core
-    ```
-2.  Edite o `appsettings.json` e **insira suas strings de conexão**:
+1.  Clone este repositório:
+    ```bash
+    git clone https://[SEU-REPOSITORIO-URL]/OasisApi.Core.git
+    cd OasisApi.Core
+    ```
+2.  Edite o `appsettings.json` e **insira suas strings de conexão**:
 
-    ```json
-    {
-      "ConnectionStrings": {
-        "OracleDbConnection": "User Id=SEU_RM;Password=SUA_SENHA_ORACLE;Data Source=oracle.fiap.com.br:1521/ORCL;",
-        "MongoDbConnection": "mongodb+srv://SEU_USUARIO_MONGO:SUA_SENHA_MONGO@seucluster.mongodb.net/"
-      },
-      "MongoDbSettings": {
-        "DatabaseName": "OasisEquilibrioDb",
-        "CollectionName": "UsuariosDataset"
-      }
-      // ... (logging, etc.)
-    }
-    ```
+    ```json
+    {
+      "ConnectionStrings": {
+        "OracleDbConnection": "User Id=SEU_RM;Password=SUA_SENHA_ORACLE;Data Source=oracle.fiap.com.br:1521/ORCL;",
+        "MongoDbConnection": "mongodb+srv://SEU_USUARIO_MONGO:SUA_SENHA_MONGO@seucluster.mongodb.net/"
+      },
+      "MongoDbSettings": {
+        "DatabaseName": "OasisEquilibrioDb",
+        "CollectionName": "UsuariosDataset"
+      }
+      // ... (logging, etc.)
+    }
+    ```
 
 ### 4. Executar a Aplicação Localmente
 
-1.  Abra um terminal na raiz do projeto (`OasisApi.Core`).
-2.  Restaure os pacotes:
-    ```bash
-    dotnet restore
-    ```
-3.  Execute a aplicação:
-    ```bash
-    dotnet run
-    ```
-4.  A API estará disponível. Os endereços principais são:
-    * **Swagger (Documentação):** `https://localhost:[PORTA]/` (a página inicial)
-    * **Health Check Detalhado:** `https://localhost:[PORTA]/health/details`
+1.  Abra um terminal na raiz do projeto (`OasisApi.Core`).
+2.  Restaure os pacotes:
+    ```bash
+    dotnet restore
+    ```
+3.  Execute a aplicação:
+    ```bash
+    dotnet run
+    ```
+4.  A API estará disponível. Os endereços principais são:
+    * **Swagger (Documentação):** `https://localhost:[PORTA]/` (a página inicial)
+    * **Health Check Detalhado:** `https://localhost:[PORTA]/health/details`
 
 ---
 
@@ -125,56 +112,40 @@ Siga estes passos para executar o projeto localmente:
 
 O projeto `OasisApi.Core.Tests` contém os testes de integração automatizados.
 
-1.  Abra a Solução (`.sln`) no Visual Studio.
-2.  Abra o **Gerenciador de Testes** (Menu `Exibir` -> `Gerenciador de Testes`).
-3.  Clique em **"Executar Todos os Testes"**.
+1.  Abra a Solução (`.sln`) no Visual Studio.
+2.  Abra o **Gerenciador de Testes** (Menu `Exibir` -> `Gerenciador de Testes`).
+3.  Clique em **"Executar Todos os Testes"**.
 
 ---
 
-## 🧪 Exemplo de Teste Rápido (Usando Swagger)
+## 🧪 Exemplo de Teste Rápido (CRUD de Usuários e ML.NET)
 
-Este roteiro demonstra o ciclo CRUD completo e a integração (execute localmente para testar o Oracle).
+Este roteiro demonstra o ciclo CRUD completo e a integração (execute **localmente** para testar o Oracle e o ML.NET).
 
-**1. (CREATE) Criar um usuário:**
-* **Endpoint:** `POST /api/v1/usuarios`
-* **Request Body:**
-    ```json
-    {
-      "empresaId": 1,
-      "nomeCompleto": "Debora Lemos (Teste API)",
-      "email": "debora.lemos@oasis.tech",
-      "cargo": "Engenheira de QA",
-      "fusoHorario": "America/Sao_Paulo"
-    }
-    ```
-* **Resultado:** `201 Created`.
+### 1. Testar o CRUD de Usuários (Oracle)
 
-**2. (READ) Ler os usuários:**
-* **Endpoint:** `GET /api/v1/usuarios`
-* **Ação:** Execute o `GET` e encontre o `usuarioId` da "Debora Lemos" que você acabou de criar (vamos supor que seja `13`).
+1. **(CREATE) Criar um usuário:** `POST /api/v1/usuarios`
+2. **(READ) Ler os usuários:** `GET /api/v1/usuarios`
+3. **(UPDATE) Atualizar o usuário:** `PUT /api/v1/usuarios/{id}`
+4. **(DELETE) Deletar o usuário:** `DELETE /api/v1/usuarios/{id}`
 
-**3. (UPDATE) Atualizar o usuário:**
-* **Endpoint:** `PUT /api/v1/usuarios/{id}`
-* **Parameters:** `id: 13`
-* **Request Body:**
-    ```json
-    {
-      "nomeCompleto": "Debora Lemos (Cargo Atualizado)",
-      "cargo": "Gerente de QA",
-      "fusoHorario": "America/Recife"
-    }
-    ```
-* **Resultado:** `200 OK`.
+### 2. Testar o ML.NET (Classificação de Humor)
 
-**4. (DELETE) Deletar o usuário:**
-* **Endpoint:** `DELETE /api/v1/usuarios/{id}`
-* **Parameters:** `id: 13`
-* **Resultado:** `204 No Content`. (Se você rodar o `GET` de novo, a "Debora" terá sumido).
+* **Endpoint:** `POST /v1/ml/classificar-humor`
+* **Ação:** Insira uma frase e execute.
+* **Request Body Exemplo:**
+    ```json
+    {
+      "SentimentText": "Este projeto está incrível e me fez rir!"
+    }
+    ```
+* **Resultado Esperado:** `200 OK` com `ResultadoClassificacao` como **Positivo**.
 
-**5. (EXPORT) Testar a integração Oracle -> MongoDB:**
+### 3. Testar a Exportação (Oracle -> MongoDB)
+
 * **Endpoint:** `POST /api/v1/export/mongodb/{empresaId}`
 * **Parameters:** `empresaId: 1`
-* **Resultado:** `200 OK`. (Se você checar no MongoDB Atlas, os dados do Oracle (incluindo os 5 usuários da "Oasis Tech") terão sido importados).
+* **Resultado:** `200 OK`. (Verifique no MongoDB Atlas se a coleção `UsuariosDataset` foi populada).
 
 ---
 
