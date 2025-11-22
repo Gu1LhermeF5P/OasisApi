@@ -45,7 +45,29 @@ Este projeto foi desenvolvido em **.NET 8.0 (LTS)** e cumpre todos os requisitos
 
 ---
 
-## 🔧 Configuração e Instalação
+## 🚀 Deploy e Teste ao Vivo (Azure)
+
+**Link do Deploy (Swagger UI):**
+[https://oasis-api-gs-bagkd6f7e7c6b4hv.westus-01.azurewebsites.net/](https://oasis-api-gs-bagkd6f7e7c6b4hv.westus-01.azurewebsites.net/)
+
+A URL acima carrega a interface do Swagger UI diretamente (esta é a página inicial), que foi habilitada em produção para fins de demonstração.
+
+### ‼️ Instruções Importantes para Teste na Nuvem
+
+Ao testar a API no link de deploy acima, observe o seguinte comportamento:
+
+* **Endpoints do Oracle (ex: `GET /api/v1/usuarios`, `GET /health/details`)**
+    * **Status:** 🔴 **FALHARÁ** (Erro 500 - Timeout)
+    * **Motivo (Esperado):** O firewall da FIAP bloqueia conexões externas de servidores na nuvem (como o Azure) ao banco de dados `oracle.fiap.com.br`.
+    * **Prova de Funcionamento:** A prova completa de que a integração com o Oracle funciona está no **vídeo de demonstração** (gravado localmente), onde a conexão é permitida.
+
+* **Endpoints do MongoDB (ex: `POST /api/v1/export/mongodb/...`)**
+    * **Status:** 🟢 **FUNCIONARÁ**
+    * **Motivo:** O firewall do MongoDB Atlas foi configurado para `0.0.0.0/0` (Allow Access from Anywhere), permitindo a conexão do servidor do Azure.
+
+---
+
+## 🔧 Configuração e Instalação (Local)
 
 Siga estes passos para executar o projeto localmente:
 
@@ -82,7 +104,7 @@ Siga estes passos para executar o projeto localmente:
     }
     ```
 
-### 4. Executar a Aplicação
+### 4. Executar a Aplicação Localmente
 
 1.  Abra um terminal na raiz do projeto (`OasisApi.Core`).
 2.  Restaure os pacotes:
@@ -94,7 +116,7 @@ Siga estes passos para executar o projeto localmente:
     dotnet run
     ```
 4.  A API estará disponível. Os endereços principais são:
-    * **Swagger (Documentação):** `https://localhost:[PORTA]/swagger`
+    * **Swagger (Documentação):** `https://localhost:[PORTA]/` (a página inicial)
     * **Health Check Detalhado:** `https://localhost:[PORTA]/health/details`
 
 ---
@@ -107,58 +129,11 @@ O projeto `OasisApi.Core.Tests` contém os testes de integração automatizados.
 2.  Abra o **Gerenciador de Testes** (Menu `Exibir` -> `Gerenciador de Testes`).
 3.  Clique em **"Executar Todos os Testes"**.
 
-
-
----
-
-## API Endpoints (Principais)
-
-Aqui estão os principais endpoints demonstrados neste projeto:
-
-### Health Check
-
-* `GET /health`
-    * **Função:** Verifica se a API está "viva" (liveness probe).
-    * **Resposta (Sucesso):** `Healthy`
-* `GET /health/details`
-    * **Função:** Verifica a saúde da API e de **todos** os seus serviços dependentes (readiness probe), como o Oracle.
-    * **Resposta (Sucesso):** Um JSON detalhado com o status `Healthy` para o `OracleDB-Check`.
-
-### Usuários (CRUD) - v1 e v2
-
-* `POST /api/v1/usuarios` (ou `/v2`)
-    * **Função:** Cria um novo usuário. Chama a procedure `SP_INSERT_USUARIO`.
-    * **Resposta (Sucesso):** `201 Created`
-
-* `GET /api/v1/usuarios` (ou `/v2`)
-    * **Função:** Lista usuários com paginação e HATEOAS.
-    * **Resposta (Sucesso):** `200 OK` (com o objeto `PagedResult`)
-
-* `PUT /api/v1/usuarios/{id}` (ou `/v2`)
-    * **Função:** Atualiza um usuário. Chama a procedure `SP_UPDATE_USUARIO`.
-    * **Resposta (Sucesso):** `200 OK`
-
-* `DELETE /api/v1/usuarios/{id}` (ou `/v2`)
-    * **Função:** Deleta um usuário. Chama a procedure `SP_DELETE_USUARIO`.
-    * **Resposta (Sucesso):** `204 No Content`
-
-### Versionamento (V2)
-
-* `GET /api/v2/usuarios`
-    * **Função:** Lista usuários usando o `UsuarioDtoV2` (que inclui o campo `fusoHorario`).
-    * **Resposta (Sucesso):** `200 OK`
-
-### Integração MongoDB
-
-* `POST /api/v1/export/mongodb/{empresaId}`
-    * **Função:** O teste principal. Chama a procedure `SP_EXPORTAR_DATASET_EMPRESA` do Oracle e importa o JSON resultante para o MongoDB Atlas.
-    * **Resposta (Sucesso):** `200 OK`
-
 ---
 
 ## 🧪 Exemplo de Teste Rápido (Usando Swagger)
 
-Este roteiro demonstra o ciclo CRUD completo e a integração.
+Este roteiro demonstra o ciclo CRUD completo e a integração (execute localmente para testar o Oracle).
 
 **1. (CREATE) Criar um usuário:**
 * **Endpoint:** `POST /api/v1/usuarios`
@@ -206,6 +181,6 @@ Este roteiro demonstra o ciclo CRUD completo e a integração.
 ## 👥 Integrantes do Grupo
 
 | Nome | RM |
-|------|-----|
+| :--- | :--- |
 | Larissa de Freitas Moura | 555136 |
 | Guilherme Francisco | 557648 |
