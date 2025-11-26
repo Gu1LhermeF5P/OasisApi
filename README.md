@@ -13,7 +13,9 @@ Esta API .NET serve como a "ponte" robusta entre o banco de dados relacional (Or
 Esta API (`OasisApi.Core`) não é consumida diretamente pelo frontend. Ela é a camada de dados que será chamada pela nossa API "cérebro" (Java/Spring). 
 
 ---
-
+## 📺 Demonstração
+**[CLIQUE AQUI PARA ASSISTIR AO VÍDEO NO YOUTUBE](https://youtu.be/l6i0huCIaQQ?si=DyX1Iw1WwPG6dNQ_)**
+---
 ## 🚀 Tecnologias e Requisitos (`ADVANCED BUSINESS DEVELOPMENT WITH .NET`)
 
 Este projeto foi desenvolvido em **.NET 8.0 (LTS)** e cumpre todos os requisitos da matéria, incluindo a implementação da funcionalidade de IA e o CRUD de sentenças de humor/sentimento (conforme implementado na Sprint 4):
